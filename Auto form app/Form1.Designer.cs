@@ -28,10 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.lblAutoStatus = new System.Windows.Forms.Label();
 			this.btnStart = new System.Windows.Forms.Button();
 			this.btnAccelerate = new System.Windows.Forms.Button();
 			this.pbaSpeed = new System.Windows.Forms.ProgressBar();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.SuspendLayout();
 			// 
 			// lblAutoStatus
@@ -70,6 +72,11 @@
 			this.pbaSpeed.Size = new System.Drawing.Size(708, 46);
 			this.pbaSpeed.TabIndex = 3;
 			// 
+			// timer1
+			// 
+			this.timer1.Interval = 1000;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -92,5 +99,6 @@
 		private Button btnStart;
 		private Button btnAccelerate;
 		private ProgressBar pbaSpeed;
+		private System.Windows.Forms.Timer timer1;
 	}
 }

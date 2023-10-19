@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Auto_form_app
 {
 	public partial class Form1 : Form
@@ -74,5 +76,22 @@ namespace Auto_form_app
 
 		#endregion
 
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			//put your code here
+		}
+
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			base.OnClosing(e);
+
+			//Put your code here
+			if (MessageBox.Show("Confermi la chiusura?", "Conferma", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes){
+				//confirm form close
+			} else {
+				//cancel form closing
+				e.Cancel = true;
+			}
+		}
 	}
 }
